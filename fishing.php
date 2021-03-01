@@ -91,7 +91,7 @@
                 $("#gofishing").click(goFishing);
 
                 function goFishing() {
-                    //retrive json from http://url/fishing.php?game_id=$id
+                    //retrieve json from http://url/fishing.php?game_id=$id
                 }
               </script>
         </head>
@@ -108,9 +108,13 @@
 <?php
     if (isset( $_GET['game_id']) ) {
         $game = new Game($_GET['game_id']);
+        // here, I'd get the current status of the db and return it as
+        // json to the div
     }
     else {
         $game = new Game();
         $game_id = $game->getGame();
+        // here, we'd simply insert the required defaults into the db, and then
+        // use that to populate some json and return it to the div
     }
 ?>
