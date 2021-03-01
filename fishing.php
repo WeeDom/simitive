@@ -25,7 +25,9 @@
 
         public function connect()
         {
-            $mysqli = new mysqli($this->host, $this->user, $this->pass, $this->db);
+            $mysqli = new mysqli(
+                $this->host, $this->user,
+                $this->pass, $this->db);
             if($mysqli->connect_errno) {
                     printf('db connection failed');
             }
