@@ -4,7 +4,7 @@ GRANT ALL on simitive.* to 'simitive'@'localhost';
 CREATE DATABASE simitive;
 USE simitive;
 CREATE TABLE IF NOT EXISTS fishing (
-    id int primary key,
+    id int primary key AUTO_INCREMENT,
     mackerel int,
     bass int,
     cod int,

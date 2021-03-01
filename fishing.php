@@ -1,11 +1,15 @@
 <?php
     class Fish {
         public $db;
-        function __construct(int $name=null) {
+        function __construct() {
             $this->db = new DB();
             $this->db->connect();
 
             return $this;
+        }
+
+        function createMackerel(int $num=1) {
+            $this->db->query();
         }
     }
 
@@ -34,4 +38,44 @@
             return $mysqli;
         }
     }
+
+    class Game {
+        public $game_id;
+        public $line_strength;
+        public $db;
+
+        public function __construct() {
+            $this->db = new DB();
+            $this->db = $this->db->connect();
+        }
+
+        public function createGame() {
+            $q = "
+                INSERT INTO fishing (
+                    mackerel,
+                    bass,
+                    cod,
+                    tuna,
+                    shark,
+                    lives,
+                    modified)
+                VALUES (
+                    10,
+                    8,
+                    6,
+                    4,
+                    1,
+                    3,
+                    now()
+                );
+                ";
+            $result = $this->game_id = $this->db->query($q);
+            return $this->db->insert_id;
+        }
+    }
+?>
+
+<?php
+    $game = new Game();
+    $game_id = $game->createGame();
 ?>
