@@ -12,9 +12,9 @@ final class FishTest extends TestCase {
         $this->assertEquals($result[0], 'simitive');
     }
 
-    public function testCreateGame(): void {
+    public function testGetGame(): void {
         $game = new Game();
-        $id = $game->createGame();
+        $id = $game->getGame();
         $this->assertIsInt($id);
     }
 }
